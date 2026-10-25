@@ -425,19 +425,24 @@ ul, ol { list-style: none; }
 
 .meme-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
 }
 
 .meme-card {
   margin: 0;
+  grid-column: span 2;
   background: #120804;
   border: 1px solid var(--line);
   overflow: hidden;
 }
 
 .meme-card.wide {
-  grid-column: 1 / -1;
+  grid-column: span 6;
+}
+
+.meme-card.half {
+  grid-column: span 3;
 }
 
 .meme-card img {
@@ -452,7 +457,7 @@ ul, ol { list-style: none; }
   object-position: center;
 }
 
-.meme-card:last-child img {
+.meme-card.pilot img {
   object-position: center 42%;
 }
 
@@ -1071,13 +1076,8 @@ button.btn { font: inherit; letter-spacing: 0.16em; font-family: var(--font-disp
   .token-board,
   .steps,
   .ca-box,
-  .feature-row,
-  .meme-grid {
+  .feature-row {
     grid-template-columns: 1fr;
-  }
-
-  .meme-card.wide {
-    grid-column: auto;
   }
 
   .hero-copy {
@@ -1113,6 +1113,14 @@ button.btn { font: inherit; letter-spacing: 0.16em; font-family: var(--font-disp
 }
 
 @media (max-width: 720px) {
+  .meme-grid { grid-template-columns: 1fr; }
+
+  .meme-card,
+  .meme-card.wide,
+  .meme-card.half {
+    grid-column: auto;
+  }
+
   .nav-links {
     position: fixed;
     top: 78px;
