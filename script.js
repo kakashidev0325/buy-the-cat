@@ -1,8 +1,8 @@
 const CONFIG = {
-  tokenAddress: "5z6soYapgMHRijx1xoENhEBSGUhBgYRamW3pCVMTpump",
+  tokenAddress: "Ef1msGuVNfbKY6AzVM25SHEJWuEFSscKxTR2TazZpump",
   pumpFunUrl: "",
-  twitter: "https://x.com/trumpsol_x ",
-  telegram: "",
+  twitter: "https://x.com/buythecat_x",
+  telegram: "https://t.me/buythecat_tg",
 };
 
 function getPumpFunUrl() {
@@ -18,7 +18,7 @@ function initContract() {
   const address = CONFIG.tokenAddress;
 
   if (!address) {
-    display.textContent = "5z6soYapgMHRijx1xoENhEBSGUhBgYRamW3pCVMTpump";
+    display.textContent = "Ef1msGuVNfbKY6AzVM25SHEJWuEFSscKxTR2TazZpump";
     copyBtn.disabled = true;
     copyBtn.title = "Contract address coming soon";
     return;
